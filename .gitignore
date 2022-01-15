@@ -6,4 +6,4 @@
 **/*.xcworkspace/xcshareddata/*.xcscmblueprint
 **/*.playground/**/timeline.xctimeline
 .DS_Store
-./Common/Config.plist
+Common/Config.plist
