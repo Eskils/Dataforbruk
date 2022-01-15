@@ -11,9 +11,11 @@ Tilgjengeleg statistikk er:
 - I dag — kor mykje data du har brukt i dag
 - Utløpsdag — Dato for oppbrukt data (OBS: er ikkje begrensa, kan bli meir enn 31…)
 
-<img src="Resources/widgets.png" alt="Widgets" height="500px">
-<img src="Resources/iOS.png" alt="iOS app" height="500px">
-<img src="Resources/macOS.png" alt="macOS status-bar-app" height="500px">
+<p float="left">
+    <img src="Resources/widgets.png" alt="Widgets" height="500px" />
+    <img src="Resources/iOS.png" alt="iOS app" height="500px" />
+    <img src="Resources/macOS.png" alt="macOS status-bar-app" height="500px" />
+</p>
 
 ## Kom i gang
 
