@@ -12,9 +12,18 @@ Tilgjengeleg statistikk er:
 - Utløpsdag — Dato for oppbrukt data (OBS: er ikkje begrensa, kan bli meir enn 31…)
 
 <p float="left">
-    <img src="Resources/widgets.png" alt="Widgets" height="500px" />
-    <img src="Resources/iOS.png" alt="iOS app" height="500px" />
-    <img src="Resources/macOS.png" alt="macOS status-bar-app" height="500px" />
+    <picture>
+        <source srcset="Resources/widgetsDark.png" media="(prefers-color-scheme: dark)">
+        <img src="Resources/widgets.png" alt="Widgets" height="500px">
+    </picture>
+    <picture>
+        <source srcset="Resources/iOSDark.png" media="(prefers-color-scheme: dark)">
+        <img src="Resources/iOS.png" alt="iOS app" height="500px">
+    </picture>
+    <picture>
+        <source srcset="Resources/macOSDark.png" media="(prefers-color-scheme: dark)">
+        <img src="Resources/macOS.png" alt="Widgets" height="500px">
+    </picture>
 </p>
 
 ## Kom i gang

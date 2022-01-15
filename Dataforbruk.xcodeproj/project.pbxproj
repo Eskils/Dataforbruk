@@ -55,10 +55,10 @@
 		6BD72302279202230058AFFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC37C16278DFB2D00A79C2D /* ContentView.swift */; };
 		6BD7230327922A000058AFFC /* DataforbrukWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6BD722C827903EBB0058AFFC /* DataforbrukWidget.intentdefinition */; };
 		6BD7230427922A010058AFFC /* DataforbrukWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6BD722C827903EBB0058AFFC /* DataforbrukWidget.intentdefinition */; };
-		6BD723802792F1C30058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD7237F2792F1C30058AFFC /* Config.plist */; };
-		6BD723812792F1C30058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD7237F2792F1C30058AFFC /* Config.plist */; };
-		6BD723822792F1C30058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD7237F2792F1C30058AFFC /* Config.plist */; };
-		6BD723832792F1C30058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD7237F2792F1C30058AFFC /* Config.plist */; };
+		6BD72386279322AE0058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD72385279322AE0058AFFC /* Config.plist */; };
+		6BD72387279322AE0058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD72385279322AE0058AFFC /* Config.plist */; };
+		6BD72388279322AE0058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD72385279322AE0058AFFC /* Config.plist */; };
+		6BD72389279322AE0058AFFC /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BD72385279322AE0058AFFC /* Config.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +120,7 @@
 		6BD7229B278F71A70058AFFC /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		6BD7229C27902E700058AFFC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		6BD7229F27903D150058AFFC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		6BD722A527903D6F0058AFFC /* Dataforbruk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dataforbruk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD722A527903D6F0058AFFC /* Dataforbruk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Dataforbruk.app; path = "Dataforbruk (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD722A727903D6F0058AFFC /* DataforbrukApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataforbrukApp.swift; sourceTree = "<group>"; };
 		6BD722AB27903D700058AFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BD722AE27903D700058AFFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		6BD722E9279092FB0058AFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BD722EB279092FB0058AFFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BD722EC279092FB0058AFFC /* MacOSDataforbrukWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacOSDataforbrukWidget.entitlements; sourceTree = "<group>"; };
-		6BD7237F2792F1C30058AFFC /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		6BD72385279322AE0058AFFC /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +225,7 @@
 				6BC37C15278DFB2D00A79C2D /* Datastructures.swift */,
 				6BC37C14278DFB2D00A79C2D /* Helpers.swift */,
 				6BC37C16278DFB2D00A79C2D /* ContentView.swift */,
-				6BD7237F2792F1C30058AFFC /* Config.plist */,
+				6BD72385279322AE0058AFFC /* Config.plist */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 		};
 		6BD722A427903D6F0058AFFC /* Dataforbruk (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6BD722B027903D700058AFFC /* Build configuration list for PBXNativeTarget "Dataforbruk" */;
+			buildConfigurationList = 6BD722B027903D700058AFFC /* Build configuration list for PBXNativeTarget "Dataforbruk (iOS)" */;
 			buildPhases = (
 				6BD722A127903D6F0058AFFC /* Sources */,
 				6BD722A227903D6F0058AFFC /* Frameworks */,
@@ -407,8 +407,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD72386279322AE0058AFFC /* Config.plist in Resources */,
 				6BC37C09278DFAC200A79C2D /* Assets.xcassets in Resources */,
-				6BD723802792F1C30058AFFC /* Config.plist in Resources */,
 				6BC37C1E278DFC0900A79C2D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +417,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD72387279322AE0058AFFC /* Config.plist in Resources */,
 				6BD722AF27903D700058AFFC /* Preview Assets.xcassets in Resources */,
-				6BD723812792F1C30058AFFC /* Config.plist in Resources */,
 				6BD722AC27903D700058AFFC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BD723822792F1C30058AFFC /* Config.plist in Resources */,
+				6BD72388279322AE0058AFFC /* Config.plist in Resources */,
 				6BD722CA27903EBB0058AFFC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BD723832792F1C30058AFFC /* Config.plist in Resources */,
+				6BD72389279322AE0058AFFC /* Config.plist in Resources */,
 				6BD722EA279092FB0058AFFC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
