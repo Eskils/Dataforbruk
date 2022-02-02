@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6B001A8F278F0F860014AE51 /* UsageStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B001A8E278F0F860014AE51 /* UsageStatView.swift */; };
+		6B36F7B827A935B50014E474 /* ValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7B727A935B50014E474 /* ValueManager.swift */; };
+		6B36F7B927A935B50014E474 /* ValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7B727A935B50014E474 /* ValueManager.swift */; };
+		6B36F7BD27A935D90014E474 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7BC27A935D90014E474 /* StorageManager.swift */; };
+		6B36F7BE27A935D90014E474 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7BC27A935D90014E474 /* StorageManager.swift */; };
+		6B36F7BF27A935D90014E474 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7BC27A935D90014E474 /* StorageManager.swift */; };
+		6B36F7C027A935D90014E474 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36F7BC27A935D90014E474 /* StorageManager.swift */; };
 		6BC37C07278DFAC100A79C2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC37C06278DFAC100A79C2D /* AppDelegate.swift */; };
 		6BC37C09278DFAC200A79C2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC37C08278DFAC200A79C2D /* Assets.xcassets */; };
 		6BC37C18278DFB2D00A79C2D /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC37C14278DFB2D00A79C2D /* Helpers.swift */; };
@@ -105,6 +111,12 @@
 
 /* Begin PBXFileReference section */
 		6B001A8E278F0F860014AE51 /* UsageStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStatView.swift; sourceTree = "<group>"; };
+		6B36F7B727A935B50014E474 /* ValueManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueManager.swift; sourceTree = "<group>"; };
+		6B36F7BC27A935D90014E474 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		6B36F7C127A935E60014E474 /* Dataforbruk (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Dataforbruk (iOS).entitlements"; sourceTree = "<group>"; };
+		6B36F7C227A936280014E474 /* DataforbrukWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DataforbrukWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6B36F7C327A936F40014E474 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6B36F7C427A937080014E474 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6BC37C03278DFAC100A79C2D /* Dataforbruk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dataforbruk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC37C06278DFAC100A79C2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC37C08278DFAC200A79C2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,7 +132,7 @@
 		6BD7229B278F71A70058AFFC /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		6BD7229C27902E700058AFFC /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		6BD7229F27903D150058AFFC /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		6BD722A527903D6F0058AFFC /* Dataforbruk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Dataforbruk.app; path = "Dataforbruk (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BD722A527903D6F0058AFFC /* Dataforbruk (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dataforbruk (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BD722A727903D6F0058AFFC /* DataforbrukApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataforbrukApp.swift; sourceTree = "<group>"; };
 		6BD722AB27903D700058AFFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BD722AE27903D700058AFFC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -180,6 +192,8 @@
 		6BC37BFA278DFAC100A79C2D = {
 			isa = PBXGroup;
 			children = (
+				6B36F7C427A937080014E474 /* README.md */,
+				6B36F7C227A936280014E474 /* DataforbrukWidgetExtension.entitlements */,
 				6BD7229E27903CEB0058AFFC /* Common */,
 				6BC37C05278DFAC100A79C2D /* Dataforbruk (macOS) */,
 				6BD722A627903D6F0058AFFC /* Dataforbruk (iOS) */,
@@ -194,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				6BC37C03278DFAC100A79C2D /* Dataforbruk.app */,
-				6BD722A527903D6F0058AFFC /* Dataforbruk.app */,
+				6BD722A527903D6F0058AFFC /* Dataforbruk (iOS).app */,
 				6BD722BF27903EBB0058AFFC /* DataforbrukWidgetExtension.appex */,
 				6BD722E2279092FA0058AFFC /* MacOSDataforbrukWidgetExtension.appex */,
 			);
@@ -222,6 +236,8 @@
 				6BD72299278F2EF60058AFFC /* StatCell.swift */,
 				6B001A8E278F0F860014AE51 /* UsageStatView.swift */,
 				6BC37C1F278DFEA700A79C2D /* AppManager.swift */,
+				6B36F7B727A935B50014E474 /* ValueManager.swift */,
+				6B36F7BC27A935D90014E474 /* StorageManager.swift */,
 				6BC37C15278DFB2D00A79C2D /* Datastructures.swift */,
 				6BC37C14278DFB2D00A79C2D /* Helpers.swift */,
 				6BC37C16278DFB2D00A79C2D /* ContentView.swift */,
@@ -233,6 +249,7 @@
 		6BD722A627903D6F0058AFFC /* Dataforbruk (iOS) */ = {
 			isa = PBXGroup;
 			children = (
+				6B36F7C127A935E60014E474 /* Dataforbruk (iOS).entitlements */,
 				6BD722DD279084260058AFFC /* Info.plist */,
 				6BD722A727903D6F0058AFFC /* DataforbrukApp.swift */,
 				6BD722AB27903D700058AFFC /* Assets.xcassets */,
@@ -252,6 +269,7 @@
 		6BD722C027903EBB0058AFFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6B36F7C327A936F40014E474 /* README.md */,
 				6BD722C127903EBB0058AFFC /* WidgetKit.framework */,
 				6BD722C327903EBB0058AFFC /* SwiftUI.framework */,
 			);
@@ -319,7 +337,7 @@
 			);
 			name = "Dataforbruk (iOS)";
 			productName = Dataforbruk;
-			productReference = 6BD722A527903D6F0058AFFC /* Dataforbruk.app */;
+			productReference = 6BD722A527903D6F0058AFFC /* Dataforbruk (iOS).app */;
 			productType = "com.apple.product-type.application";
 		};
 		6BD722BE27903EBB0058AFFC /* DataforbrukWidgetExtension */ = {
@@ -457,8 +475,10 @@
 				6BD7229D27902E700058AFFC /* Reachability.swift in Sources */,
 				6BD7229A278F2EF60058AFFC /* StatCell.swift in Sources */,
 				6BC37C19278DFB2D00A79C2D /* Datastructures.swift in Sources */,
+				6B36F7B827A935B50014E474 /* ValueManager.swift in Sources */,
 				6BD722A027903D150058AFFC /* Common.swift in Sources */,
 				6BC37C1B278DFB2D00A79C2D /* API.swift in Sources */,
+				6B36F7BD27A935D90014E474 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +495,10 @@
 				6BD722B627903D940058AFFC /* API.swift in Sources */,
 				6BD722B927903D940058AFFC /* AppManager.swift in Sources */,
 				6BD722B427903D940058AFFC /* Helpers.swift in Sources */,
+				6B36F7B927A935B50014E474 /* ValueManager.swift in Sources */,
 				6BD722BA27903D940058AFFC /* Reachability.swift in Sources */,
 				6BD722B727903D940058AFFC /* StatCell.swift in Sources */,
+				6B36F7BE27A935D90014E474 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +513,7 @@
 				6BD722DC27903F4E0058AFFC /* Datastructures.swift in Sources */,
 				6BD722D927903F4E0058AFFC /* UsageStatView.swift in Sources */,
 				6BD722C727903EBB0058AFFC /* DataforbrukWidget.swift in Sources */,
+				6B36F7BF27A935D90014E474 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +528,7 @@
 				6BD722FD279093DF0058AFFC /* Helpers.swift in Sources */,
 				6BD722FB279093DF0058AFFC /* Datastructures.swift in Sources */,
 				6BD722FF279093DF0058AFFC /* Common.swift in Sources */,
+				6B36F7C027A935D90014E474 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +741,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Dataforbruk (iOS)/Dataforbruk (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dataforbruk (iOS)/Preview Content\"";
@@ -724,6 +749,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Dataforbruk (iOS)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Dataforbruk;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -750,6 +776,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Dataforbruk (iOS)/Dataforbruk (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dataforbruk (iOS)/Preview Content\"";
@@ -757,6 +784,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Dataforbruk (iOS)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Dataforbruk;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -783,6 +811,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DataforbrukWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EUKTZ7725R;
@@ -812,6 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DataforbrukWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = EUKTZ7725R;

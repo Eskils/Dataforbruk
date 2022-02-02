@@ -106,6 +106,10 @@ class CalcResult: ObservableObject {
     static func empty() -> CalcResult {
         return .init(prosent: 0, verdi: "--")
     }
+    
+    fileprivate func toCodable() -> CodableUsageCalc.CodableCalcResult {
+        return .init(prosent: self.prosent, verdi: self.verdi)
+    }
 }
 
 func getMaksAvgData(fromDataGiven dataGiven: Double, numDaysInMonth: Double?=nil) -> Double {
@@ -148,11 +152,60 @@ struct UsageCalcResult {
     let slutt: CalcResult
     let nytt: CalcResult
     let utløpsdagVerdi: String
+    
+    func toCodable() -> CodableUsageCalc {
+        return .init(usageCalcResult: self)
+    }
+}
+
+struct CodableUsageCalc: Codable {
+    
+    internal init(dataUsed: Double, dataGiven: Double, totalt: CodableUsageCalc.CodableCalcResult, avg: CodableUsageCalc.CodableCalcResult, slutt: CodableUsageCalc.CodableCalcResult, nytt: CodableUsageCalc.CodableCalcResult, utløpsdagVerdi: String) {
+        self.dataUsed = dataUsed
+        self.dataGiven = dataGiven
+        self.totalt = totalt
+        self.avg = avg
+        self.slutt = slutt
+        self.nytt = nytt
+        self.utløpsdagVerdi = utløpsdagVerdi
+    }
+    
+    init(usageCalcResult: UsageCalcResult) {
+        self.dataUsed = usageCalcResult.dataUsed
+        self.dataGiven = usageCalcResult.dataGiven
+        self.totalt = usageCalcResult.totalt.toCodable()
+        self.avg = usageCalcResult.avg.toCodable()
+        self.slutt = usageCalcResult.slutt.toCodable()
+        self.nytt = usageCalcResult.nytt.toCodable()
+        self.utløpsdagVerdi = usageCalcResult.utløpsdagVerdi
+    }
+    
+    let dataUsed: Double
+    let dataGiven: Double
+    let totalt: CodableCalcResult
+    let avg: CodableCalcResult
+    let slutt: CodableCalcResult
+    let nytt: CodableCalcResult
+    let utløpsdagVerdi: String
+    
+    struct CodableCalcResult: Codable {
+        let prosent: Double
+        let verdi: String
+        
+        func toResult() -> CalcResult {
+            return .init(prosent: prosent, verdi: verdi)
+        }
+    }
+    
+    func toResult() -> UsageCalcResult {
+        return .init(dataUsed: dataUsed, dataGiven: dataGiven, totalt: totalt.toResult(), avg: avg.toResult(), slutt: slutt.toResult(), nytt: nytt.toResult(), utløpsdagVerdi: utløpsdagVerdi)
+    }
 }
 
 func performCalculations(withUsage usage: Usage.UsageCategory?) -> UsageCalcResult? {
     guard let usage = usage else { return nil }
-    let (dataUsed, dataGiven) = getUsageData(fromUsage: usage)
+    var (dataUsed, dataGiven) = getUsageData(fromUsage: usage)
+    if dataUsed.isZero { dataUsed = 0.0001 }
     // Totalt
     let totaltVerdi = "\(formatDecim(dataUsed)) / \(formatDecim(dataGiven))"
     let totaltProsent = calcPercentage(used: dataUsed, given: dataGiven)
@@ -177,10 +230,10 @@ func performCalculations(withUsage usage: Usage.UsageCategory?) -> UsageCalcResu
     let nyttSnitt = (dataGiven - dataUsed) / remainingDays
     
     let nyttVerdi = "\(formatDecim(nyttSnitt))"
-    let nyttProsent = nyttSnitt / avgData
+    let nyttProsent = min(1, nyttSnitt / avgData)
     
     // Utløpsdag
-    let utløpsdagVerdi = "\(Int(floor(dataGiven / avgData)))."
+    let utløpsdagVerdi = "\(Int(min(numDaysInMonth, floor(dataGiven / avgData))))."
     
     return UsageCalcResult(dataUsed: dataUsed,
                            dataGiven: dataGiven,

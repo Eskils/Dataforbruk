@@ -78,6 +78,13 @@ struct ContentView: View {
     func didAppear() {
         _ = appManager.usageManager         .listenToUpdates(self.didGetUpdates(withUsage:))
         _ = appManager.detailedUsageManager .listenToUpdates(self.didGetUpdates(withDetailedUsage:))
+        
+        if let result: CodableUsageCalc = appManager.storageManager.retrieveData(withKey: StorageKeys.usageResult) {
+            handleResult(result.toResult())
+            if let lastUpdate: Date = appManager.storageManager.retrieveData(withKey: StorageKeys.lastUpdate) {
+                self.lastUpdate = lastUpdate
+            }
+        }
     }
     
     func didGetUpdates(withUsage usage: Usage) {
@@ -85,11 +92,16 @@ struct ContentView: View {
               let result = performCalculations(withUsage: datausage)
         else { return }
         
+        appManager.storageManager.store(data: result.toCodable(), withKey: StorageKeys.usageResult)
+        self.lastUpdate = appManager.lastUpdate
+        handleResult(result)
+    }
+    
+    func handleResult(_ result: UsageCalcResult) {
         self.dataGiven = result.dataGiven
         self.dataUsed = result.dataUsed
-        self.lastUpdate = appManager.lastUpdate
         
-        self.totalt.set(result.totalt)// = result.totalt
+        self.totalt.set(result.totalt)
         self.avg.set(result.avg)
         self.slutt.set(result.slutt)
         self.nytt.set(result.nytt)
@@ -103,7 +115,6 @@ struct ContentView: View {
         self.dataUsedToday = daily
         updateDagsbruk()
     }
-    
     
     func updateDagsbruk() {
         guard let daily = self.dataUsedToday,

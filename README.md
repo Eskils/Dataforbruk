@@ -9,22 +9,10 @@ Tilgjengeleg statistikk er:
 - Sluttsum — kor mykje data du kjem til å bruke ila. månaden med same snittbruk
 - Nytt snitt — kor mykje du kan redusere/auke bruken din med for å bruke opp inkludert data
 - I dag — kor mykje data du har brukt i dag
-- Utløpsdag — Dato for oppbrukt data (OBS: er ikkje begrensa, kan bli meir enn 31…)
+- Utløpsdag — Dato for oppbrukt data
 
-<p float="left">
-    <picture>
-        <source srcset="Resources/widgetsDark.png" media="(prefers-color-scheme: dark)">
-        <img src="Resources/widgets.png" alt="Widgets" height="500px">
-    </picture>
-    <picture>
-        <source srcset="Resources/iOSDark.png" media="(prefers-color-scheme: dark)">
-        <img src="Resources/iOS.png" alt="iOS app" height="500px">
-    </picture>
-    <picture>
-        <source srcset="Resources/macOSDark.png" media="(prefers-color-scheme: dark)">
-        <img src="Resources/macOS.png" alt="Widgets" height="500px">
-    </picture>
-</p>
+![Widgets](Resources/widgetsDark.png#gh-dark-mode-only)  ![iOS app](Resources/iOSDark.png#gh-dark-mode-only)  ![macOS app](Resources/macOSDark.png#gh-dark-mode-only)
+![Widgets](Resources/widgets.png#gh-light-mode-only)  ![iOS app](Resources/iOS.png#gh-light-mode-only)  ![macOS app](Resources/macOS.png#gh-light-mode-only)
 
 ## Kom i gang
 
@@ -47,4 +35,4 @@ Tokenet kan skaffast slik:
 - Logg inn og vent til sida lastar
 - Trykk på fila som har ditt nummer på seg, tokenet er `Authorization: Bearer <Token>` under `Forespørsel`. (Vanlegvis begynnar tokenet med “ey”)
 
-<img src="Resources/inspector.png" alt="Nettverk i nettinspektøren til Safari" height="500px">
+![Nettverk i nettinspektøren til Safari](Resources/inspector.png)

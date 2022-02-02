@@ -11,39 +11,12 @@ typealias UsageHandler = (Usage)->Void
 
 var appManager: AppManager!
 
-//TODO: Look into using Combine for this
-class ValueManager<T> {
-    typealias ValueHandler = (T)->Void
-    
-    var value: T? {
-        didSet {
-            DispatchQueue.main.async { [self] in
-                if let value = value { listeners.forEach { $0.value(value) } }
-            }
-        }
-    }
-    
-    private var listeners = [String: ValueHandler]()
-    
-    
-    func listenToUpdates(_ handler: @escaping ValueHandler) -> String {
-        let key = UUID().uuidString
-        listeners[key] = handler
-        if let value = value { handler(value) }
-        return key
-    }
-    
-    func unlistenToUpdates(withKey key: String) {
-        if (listeners[key] != nil) { listeners.removeValue(forKey: key) }
-    }
-    
-}
-
 class AppManager {
     
     var lastUpdate: Date?
     let usageManager = ValueManager<Usage>()
     let detailedUsageManager = ValueManager<[DetailedUsage]>()
+    let storageManager = StorageManager()
     private var timer: Timer!
     
     var systemIsSleeping: Bool = false
@@ -68,6 +41,7 @@ class AppManager {
                 print("\(Date()) Did fetch usage")
                 self.lastUpdate = Date()
                 self.usageManager.value = usage
+                self.storageManager.store(data: self.lastUpdate, withKey: StorageKeys.lastUpdate)
             } catch {
                 print(error)
             }
