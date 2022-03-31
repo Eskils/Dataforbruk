@@ -9,6 +9,7 @@ import Foundation
 
 enum FetchError: String, Error {
     case invalidResponseStatusCode
+    case invalidAuthorization
 }
 
 fileprivate func performGET(request: URLRequest) async throws -> (Data, HTTPURLResponse) {
@@ -31,6 +32,10 @@ func getUsageData(number: String, token: String) async throws -> Usage {
         let usage = try JSONDecoder().decode(Usage.self, from: data)
         return usage
     } else {
+        if resp.statusCode == 401 || resp.statusCode == 403 {
+            throw FetchError.invalidAuthorization
+        }
+        print(resp.statusCode)
         throw FetchError.invalidResponseStatusCode
     }
 }
@@ -48,6 +53,7 @@ func getDetailedUsageData(number: String, token: String, startDate: String, endD
         let usage = try JSONDecoder().decode([DetailedUsage].self, from: data)
         return usage
     } else {
+        print(resp.statusCode)
         throw FetchError.invalidResponseStatusCode
     }
 }

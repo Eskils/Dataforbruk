@@ -14,6 +14,7 @@ var appManager: AppManager!
 class AppManager {
     
     var lastUpdate: Date?
+    var lastError = ValueManager<Error?>()
     let usageManager = ValueManager<Usage>()
     let detailedUsageManager = ValueManager<[DetailedUsage]>()
     let storageManager = StorageManager()
@@ -42,7 +43,9 @@ class AppManager {
                 self.lastUpdate = Date()
                 self.usageManager.value = usage
                 self.storageManager.store(data: self.lastUpdate, withKey: StorageKeys.lastUpdate)
+                self.lastError.value = nil
             } catch {
+                self.lastError.value = error
                 print(error)
             }
         }
@@ -54,7 +57,9 @@ class AppManager {
             do {
                 let detailedUsage = try await getDetailedUsageData(number: nummer, token: token, startDate: startDate, endDate: endDate)
                 self.detailedUsageManager.value = detailedUsage
+                self.lastError.value = nil
             } catch {
+                self.lastError.value = error
                 print(error)
             }
         }

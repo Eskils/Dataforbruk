@@ -28,6 +28,7 @@ struct ContentView: View {
     @ObservedObject var dagsbruk = CalcResult.empty()
     @ObservedObject var utløpsdag = CalcResult.empty()
     @State var lastUpdate: Date?
+    @State var error: String? = nil
     
     var stats: [StatCellDescription]!
     
@@ -49,6 +50,10 @@ struct ContentView: View {
                     .font(.title)
                     .bold()
                     .frame(width: geo.size.width - 32, alignment: .leading)
+                if let error = error {
+                    Text(error)
+                        .foregroundColor(.red)
+                }
                 Divider()
                 VStack {
                     ForEach(stats) { stat in
@@ -76,8 +81,14 @@ struct ContentView: View {
     }
     
     func didAppear() {
+        if !isTokenValid {
+            self.error = "Token is invalid. Please provide a new token"
+            return
+        }
+        
         _ = appManager.usageManager         .listenToUpdates(self.didGetUpdates(withUsage:))
         _ = appManager.detailedUsageManager .listenToUpdates(self.didGetUpdates(withDetailedUsage:))
+        _ = appManager.lastError            .listenToUpdates(self.didUpdateLastError(error:))
         
         if let result: CodableUsageCalc = appManager.storageManager.retrieveData(withKey: StorageKeys.usageResult) {
             handleResult(result.toResult())
@@ -114,6 +125,11 @@ struct ContentView: View {
         let daily = getSumDailyUsage(fromDetailedUsage: detailedUsage)
         self.dataUsedToday = daily
         updateDagsbruk()
+    }
+    
+    func didUpdateLastError(error: Error?) {
+        guard let error = error else { self.error = nil; return }
+        self.error = "\(error)"
     }
     
     func updateDagsbruk() {

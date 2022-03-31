@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 let (nummer, token) = readConfigValues()
+let isTokenValid = checkIfTokenIsValid(token: token)
 
 let colors: [Color] = [.indigo, .pink, .red, .yellow]
 

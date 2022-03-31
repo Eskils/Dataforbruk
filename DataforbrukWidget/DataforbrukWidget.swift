@@ -55,9 +55,15 @@ struct DataforbrukWidgetEntryView : View {
     let labelHeight: CGFloat = 70
     var percentage: Double?
     var value: String!
+    var tokenValid: Bool
     
     init(entry: Provider.Entry) {
         self.entry = entry
+        if isTokenValid {
+            tokenValid = isTokenValid
+        } else {
+            tokenValid = true
+        }
         let calcRes = getPercentageAndValue()
         (percentage, value) = (calcRes.prosent, calcRes.verdi)
         if calcRes.prosent == -1 { percentage = nil }
@@ -65,35 +71,42 @@ struct DataforbrukWidgetEntryView : View {
 
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing: 0) { 
-                Text(title())
-                    .font(.system(size: 14))
-                if let percentage = percentage {
-                    UsageStatView(percentage: .constant(percentage), colors: colors)
-                        .frame(width: geo.size.height - labelHeight, height: geo.size.height - labelHeight)
-                    HStack(spacing: 2) {
-                        Text(value)
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                        Text(eining())
-                            .font(.system(size: 14))
-                            .foregroundColor(Color.tertiaryLabel)
-                    }
-                } else {
-                    LinearGradient(colors: colors, startPoint: .top, endPoint: .bottomTrailing)
-                        .mask {
-                            VStack(spacing: -6) {
-                                Text(value)
-                                    .font(.system(size: 50, weight: .bold, design: .rounded))
-                                Text(eining())
-                                    .font(.system(size: 14))
-                                    .foregroundColor(Color.secondary)
-                            }
+            ZStack {
+                VStack(spacing: 0) {
+                    Text(title())
+                        .font(.system(size: 14))
+                    if let percentage = percentage {
+                        UsageStatView(percentage: .constant(percentage), colors: colors)
+                            .frame(width: geo.size.height - labelHeight, height: geo.size.height - labelHeight)
+                        HStack(spacing: 2) {
+                            Text(value)
+                                .font(.system(size: 18, weight: .bold, design: .rounded))
+                            Text(eining())
+                                .font(.system(size: 14))
+                                .foregroundColor(Color.tertiaryLabel)
                         }
-                        .frame(width: 100, height: 50 + 20)
+                    } else {
+                        LinearGradient(colors: colors, startPoint: .top, endPoint: .bottomTrailing)
+                            .mask {
+                                VStack(spacing: -6) {
+                                    Text(value)
+                                        .font(.system(size: 50, weight: .bold, design: .rounded))
+                                    Text(eining())
+                                        .font(.system(size: 14))
+                                        .foregroundColor(Color.secondary)
+                                }
+                            }
+                            .frame(width: 100, height: 50 + 20)
+                        
+                    }
                     
+                }.blur(radius: tokenValid ? 0 : 7)
+                if !tokenValid {
+                    Text("Token is invalid")
+                        .foregroundColor(.tertiaryLabel)
                 }
-                
-            }.frame(width: geo.size.width, height: geo.size.height)
+            }
+            .frame(width: geo.size.width, height: geo.size.height)
         }
     }
     

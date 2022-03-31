@@ -18,6 +18,26 @@ func readConfigValues() -> (nummer: String, token: String) {
     return (config["Nummer"]!, config["Token"]!)
 }
 
+func checkIfTokenIsValid(token: String) -> Bool {
+    let payload = getPayloadOfToken(token: token)
+    let exp = Double(payload["exp"] as! Int)
+    return exp > Date().timeIntervalSince1970
+}
+
+func getPayloadOfToken(token: String) -> [String: Any] {
+    let split = token.split(separator: ".")
+    var str = String(split[1])
+    switch str.count % 4 {
+    case 0: break
+    case 2: str += "=="
+    case 3: str += "="
+    default: return [:] // The token is invalid
+    }
+    let payload = Data(base64Encoded: str)!
+    let payloadDict = try! JSONSerialization.jsonObject(with: payload) as! [String: Any]
+    return payloadDict
+}
+
 func convertBytesToGIB(_ bytes: Double) -> Double {
     let const = 9.31322575
     let power: Double = pow(10, 10)
